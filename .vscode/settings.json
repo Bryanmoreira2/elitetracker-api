@@ -1,0 +1,38 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.env.windows": {},
+    "editor.guides.bracketPairs": true,
+    "editor.fontSize": 16,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "git.autofetch": true,
+    "editor.fontFamily": "Fira Code Light",
+    "editor.fontLigatures": true,
+    "workbench.tree.indent": 19,
+    "terminal.integrated.fontFamily": "monospace",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.colorTheme": "Rosé Pine",
+    "liveServer.settings.donotShowInfoMsg": true,
+    
+    // Configurações para JavaScript e React
+    "[javascript]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+        
+      },
+      "editor.formatOnSave": true   // Habilita formatação automática ao salvar
+    },
+  
+    "[javascriptreact]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+      },
+      "editor.formatOnSave": true   // Habilita formatação automática ao salvar
+    },
+    
+    // Configurações do Prettier
+    "prettier.requireConfig": true, // Garante que o Prettier só será executado se houver um arquivo de configuração
+    "editor.formatOnSave": true,   // Habilita formatação automática ao salvar
+    "eslint.alwaysShowStatus": true,
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  }
+  
