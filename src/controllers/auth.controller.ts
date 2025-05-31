@@ -1,8 +1,13 @@
 import axios, { isAxiosError } from 'axios';
 import { Request, Response } from 'express';
+import jwt from 'jsonwebtoken';
 
-const clientId = 'Ov23liqInf8w6Q5hY1RO';
-const clientSecret = '71b0a955b25669c278bf7a4a6163868c74f425d7';
+const {
+    GIHUB_CLIENT_ID: clientId,
+    GIHUB_CLIENT_SECRET: clientSecret,
+    JWT_SECRET: secret,
+    JWT_EXPIRES_IN: expiresIn,
+} = process.env;
 
 export class AuthController {
     auth = async (request: Request, response: Response) => {
@@ -44,7 +49,11 @@ export class AuthController {
                 name,
             } = userDataResult.data;
 
-            return response.status(200).json({ id, avatarUrl, name });
+            const token = jwt.sign({ id }, String(secret), {
+                expiresIn,
+            });
+
+            return response.status(200).json({ id, avatarUrl, name, token });
         } catch (err) {
             if (isAxiosError(err)) {
                 return response.status(400).json(err.request?.data);
