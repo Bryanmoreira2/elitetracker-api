@@ -10,6 +10,9 @@ const FocusSchemas = new Schema(
             type: Date,
             required: true,
         },
+        userId: {
+            type: String,
+        },
     },
     {
         versionKey: false,

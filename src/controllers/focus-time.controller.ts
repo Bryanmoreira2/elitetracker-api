@@ -39,6 +39,7 @@ export class FocusTimeController {
         const createdFocusTime = await focusTimeModel.create({
             timeFrom: timeFrom.toDate(),
             timeTo: timeTo.toDate(),
+            userId: request.user.id,
         });
 
         // Retorna o novo foco criado
@@ -96,6 +97,7 @@ export class FocusTimeController {
                     $gte: startDate.toDate(),
                     $lte: endDate.toDate(),
                 },
+                userId: request.user.id,
             })
 
             .project({
